@@ -5,7 +5,7 @@ import { AiFillSetting } from "react-icons/ai";
 function NavBar() {
   return (
     <div className="w-full mx-auto">
-      <div className="sm:text-lg md:text-xl m-auto w-full max-w-[1000px] h-[80px] flex justify-between items-center px-10 text-base text-[#AAA] z-1">
+      <div className="sm:text-lg md:text-xl m-auto w-full max-w-[1000px] h-[100px] flex justify-between items-center px-10 text-base text-[#AAA] z-1">
         <span className="flex group cursor-pointer">
           <img
             className="p-2"
