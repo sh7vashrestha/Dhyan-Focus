@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/dhyan-focus/static/css/main.1007bde7.css",
+    "main.js": "/dhyan-focus/static/js/main.e353a286.js",
+    "static/js/845.f594d2e8.chunk.js": "/dhyan-focus/static/js/845.f594d2e8.chunk.js",
+    "static/media/timesUp.mp3": "/dhyan-focus/static/media/timesUp.0cbb5adfa4ca49bb47c6.mp3",
+    "static/media/startTimer.mp3": "/dhyan-focus/static/media/startTimer.2968a7452038c15f4208.mp3",
+    "static/media/pauseTimer.mp3": "/dhyan-focus/static/media/pauseTimer.d73c474578244c6a1b9f.mp3",
+    "static/media/slide.mp3": "/dhyan-focus/static/media/slide.3c8db537f53afb33abba.mp3",
+    "index.html": "/dhyan-focus/index.html",
+    "main.1007bde7.css.map": "/dhyan-focus/static/css/main.1007bde7.css.map",
+    "main.e353a286.js.map": "/dhyan-focus/static/js/main.e353a286.js.map",
+    "845.f594d2e8.chunk.js.map": "/dhyan-focus/static/js/845.f594d2e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1007bde7.css",
+    "static/js/main.e353a286.js"
+  ]
+}
