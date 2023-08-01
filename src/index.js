@@ -9,7 +9,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/dhyan-focus" element={<App />} />
+      <Route path="/Dhyan-Focus" element={<App />} />
       <Route path="/dhyan" element={<App />} />
     </Routes>
   </BrowserRouter>
