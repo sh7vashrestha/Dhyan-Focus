@@ -49,17 +49,17 @@ function MainBody() {
   if (seconds < 10) seconds = "0" + seconds;
   return (
     <div className="w-full mx-auto text-[#fefefe]">
-      <div className="max-w-[1000px] m-auto w-full">
-        <div className="w-auto max-w-[270px] sm:max-w-[330px] mx-auto mt-2">
+      <div className="max-w-[1000px] flex align-middle justify-center m-auto w-full">
+        <div className="w-auto max-w-[270px] sm:max-w-[400px] mx-auto mt-5">
           <CircularProgressbarWithChildren
             value={percentage}
-            strokeWidth={4}
+            strokeWidth={3}
             styles={buildStyles({
               rotation: 1,
               strokeLinecap: "butt",
               pathTransitionDuration: 0.75,
               pathColor: store.mode === "focus" ? "#5f11c7" : "#3b9e2c",
-              trailColor: "rgba(255,255,255,.5)",
+              trailColor: "rgba(255,255,255,.7)",
             })}>
             <div
               className={
