@@ -1,8 +1,11 @@
 import { create } from "zustand";
-
+// import slideSfx from "../sounds/slide.mp3";
+// import useSound from "use-sound";
 const optionStore = create((set) => ({
   mode: "",
   timer: 25,
+  volume:2,
+  // slide: useSound(slideSfx),
   repeatFocus: 0,
   isPaused: false,
   secondsLeft: 0,
@@ -22,6 +25,7 @@ const optionStore = create((set) => ({
       secondsLeft: optionStore.getState().time[item.target.value] * 60,
       repeatFocus: 0,
     });
+    
   },
   switchMode: () => {
     if (

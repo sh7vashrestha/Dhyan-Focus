@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -7,12 +7,33 @@ import "react-circular-progressbar/dist/styles.css";
 import { BsFillPlayFill, BsStopCircleFill } from "react-icons/bs";
 import { BiPauseCircle } from "react-icons/bi";
 import optionStore from "../store/option";
+import useSound from "use-sound";
+import pauseSfx from "../sounds/pauseTimer.mp3";
+import startSfx from "../sounds/startTimer.mp3";
+import timesUpSfx from "../sounds/timesUp.mp3";
 
 function MainBody() {
   const store = optionStore();
+  const [playbackRate, setPlaybackRate] = useState(2)
+  const [start] = useSound(startSfx, {volume: store.volume});
+  const [pause] = useSound(pauseSfx, {volume: store.volume});
+  const [timesUp] = useSound(timesUpSfx,{playbackRate, volume: store.volume});
+  const startTime = () => {
+    start();
+    store.paused();
+  };
+  const pauseTime = () => {
+    pause();
+    store.paused();
+  };
+  const reset = () => {
+    pause();
+    store.reset();
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       if (store.secondsLeft === 0) {
+        timesUp();
         return store.switchMode();
       }
       if (store.isPaused) return;
@@ -32,7 +53,7 @@ function MainBody() {
         <div className="w-auto max-w-[270px] sm:max-w-[330px] mx-auto mt-2">
           <CircularProgressbarWithChildren
             value={percentage}
-            strokeWidth={10}
+            strokeWidth={4}
             styles={buildStyles({
               rotation: 1,
               strokeLinecap: "butt",
@@ -47,7 +68,7 @@ function MainBody() {
                   : "text-5xl pt-3 sm:text-7xl text-[#fefefe]"
               }>
               <button
-                onClick={store.paused}
+                onClick={store.isPaused === true ? startTime : pauseTime}
                 className="w-full align-middle justify-center group">
                 {minutes + ":" + seconds}
                 <div
@@ -83,8 +104,12 @@ function MainBody() {
             </div>
           </CircularProgressbarWithChildren>
           <button
-            onClick={store.reset}
-            className="flex justify-center align-middle w-full text-2xl sm:text-3xl text-[#aaa] mt-4 hover:scale-110 duration-500">
+            onClick={reset}
+            className={
+              store.timer !== store.secondsLeft / 60
+                ? "flex justify-center align-middle w-full text-2xl sm:text-3xl text-[#aaa] mt-4 hover:scale-110 duration-500"
+                : "hidden"
+            }>
             Stop
             <BsStopCircleFill className="mt-1 ml-3" />{" "}
           </button>
