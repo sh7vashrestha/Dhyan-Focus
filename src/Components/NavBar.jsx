@@ -1,6 +1,7 @@
 import React from "react";
 import { BsMusicNote } from "react-icons/bs";
 import { AiFillSetting } from "react-icons/ai";
+import logo from "../assets/logo.png"
 
 function NavBar() {
   return (
@@ -9,7 +10,7 @@ function NavBar() {
         <span className="flex group cursor-pointer">
           <img
             className="p-2"
-            src="/logo.png"
+            src={logo}
             alt="Logo"
             style={{ width: "50px", position: "relative" }}
           />
